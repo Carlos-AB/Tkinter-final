@@ -1,3 +1,4 @@
+from tkinter import *
 def imagen():
     ventana=Tk()
     ventana.title("wey ya")
