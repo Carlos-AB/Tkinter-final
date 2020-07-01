@@ -1,6 +1,6 @@
+from tkinter import *
 
 def imagen():
-    from tkinter import *
     ventana=Tk()
     ventana.title("wey ya")
     ventana.resizable(False,False)
@@ -16,7 +16,6 @@ def imagen():
     ventana.mainloop()
 
 def mensaje_error():
-    from tkinter import *
     ventana=Tk()
     ventana.title("Error")
     ventana.resizable(False,False)

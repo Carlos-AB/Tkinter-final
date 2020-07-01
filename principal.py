@@ -1,6 +1,7 @@
-import librerias
-import matriz
-
+from librerias import mensaje_error
+from librerias import imagen
+from matriz import split
+from tkinter import *
 import numpy as np
 
 pacientes = []
