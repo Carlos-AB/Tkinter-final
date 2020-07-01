@@ -1,6 +1,6 @@
 import librerias
 import matriz
-from tkinter import *
+
 import numpy as np
 
 pacientes = []
