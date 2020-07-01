@@ -17,12 +17,12 @@ while i==1:
     print("Desea ingresar a la interfaz?\n\t (1).Si. \n\t (2).No. ")
     print("==================================================")
     x = int(input("Elija opcion: "))
-    #opcion 1:
+    #opcion 1 del programa principal:
     if x == 1:
         print ("Estadísticas Covid-19")
         j=1
         while j==1:
-            numcamas =int(input("Ingrese el numero de camas UCI actual: "))
+            numcamas =int(input("Ingrese la cantidad de camas UCI actual: "))
             if numcamas>-1:
                 dispcamas=numcamas
                 j=0
@@ -31,17 +31,17 @@ while i==1:
                 j=1
         
         z=1
-        while z == 1:
+        while z == 1: #menú del programa#
             print ("Opciones: \n\t (1).Ingreso de datos.\n\t (2).Proyeccion.\n\t (3).Estadistica Actual.\n\t (4).Cerrar programa.")
             y =int(input("\tElija una opción (1-2-3-4): "))
-            #opcion 1:
+            #opcion 1 de la pestaña del programa:
             if y == 1:
                 print("----------------------------------------------------------")
                 print(f"\tPacientes ingresados: {numpaciente}")
                 print(f"\tCamas UCI actuales: {numcamas}")
                 dias = dias + 1
                 print("\tDías = "+str(dias)) 
-                j=1
+                j=1 #cantidad de pacientes nuevos#
                 while j==1:
                     valor1 = int(input("\tIndique la cantidad de pacientes nuevos: "))
                     if valor1>-1:
@@ -50,7 +50,7 @@ while i==1:
                     else:
                         mensaje_error()
                         j=1
-                j=1
+                j=1 #cantidad nuevas de camas#
                 while j==1:
                     valor2 = int(input("\tIndique la cantidad de camas UCI nuevas: "))
                     if valor2>-1:
@@ -65,15 +65,15 @@ while i==1:
                 print(f"\tLista de pacientes ingresados hasta Día {dias}: ")
                 dispcamas=numcamas-numpaciente
                 print("\tPacientes por día: ",pacientes)
-                print("\tCamas agregadas por día",cama)
+                print("\tCamas agregadas por día: ",cama)
                 if numcamas<numpaciente:
-                    print("\tSITUACION CRÍTICA Falta de camas, se recomienda tomar medidas lo antes posible")
+                    print("\tSITUACION CRÍTICA, Falta de camas, se recomienda tomar medidas lo antes posible")
                 else:
                     print("\tLa situacion Actual es estable")
                 print("----------------------------------------------------------")
                 
                 z==1
-            #opcion 2:    
+            #opcion 2 de la pestaña del programa:    
             elif y == 2:
                 print("----------------------------------------------------------")
                 if dias>6:
@@ -87,14 +87,14 @@ while i==1:
                             PS = np.sum(P[a-2])
                             PP = int(PS/7)
                     print("\tRespecto a la semana anterior")
-                    print("\tEl promedio de personas infectadas: ", PS)
-                    print("\tEl promedio de personas infectadas por dia:", PP)
+                    print("\tEl promedio de pacientes: ", PS)
+                    print("\tEl promedio de pacientes por dia: ", PP)
 
-                    j=1
+                    j=1 #proyección#
                     while j==1:
                         PY = int(input("\tIndique la que semana desea proyectar: "))
                         if PY>-1:
-                            Proyeccion=PS*(1+(PP/100))**PY
+                            Proyeccion=PS*(1+(PP/100))**PY #formula de proyección#
                             print("\tSe estiman aproximadamente",Proyeccion,"infectados")
                             j=0
                         else:
@@ -102,18 +102,19 @@ while i==1:
                             j=1
 
                 else:
-                    print("\tEsta opcion unicamente esta habilitada a partir del dia 7")
+                    print("\tEsta opcion unicamente esta habilitada a partir del dia 7") #unicamente se activa cuando se colocan los 7 dias de la semana#
+                print("------------------------------------------------------------")
                 z==1
-            #opcion 3:    
+            #opcion 3 de la pestaña del programa:    
             elif y == 3:
                 print("------------------------------------------------------------")
                 print("\tEstadistica Actual")
-                print("\t\tDia Actual",dias)
+                print("\t\tDia Actual: ",dias)
                 print("\t\tCantidad de Infectados: ",numpaciente)
-                print("\t\tCantidad de camas Totales",numcamas)
+                print("\t\tCantidad de camas Totales: ",numcamas)
                 if numcamas<numpaciente:
                     dispcamas = -dispcamas
-                    print("\t\tCantidad de camas UCI faltantes", dispcamas)
+                    print("\t\tCantidad de camas UCI faltantes: ", dispcamas)
                     dispcamas = -dispcamas
                 else:
                     print("\t\tCantidad de camas Disponibles: ", dispcamas)
@@ -122,7 +123,8 @@ while i==1:
                     print("\t\tALERTA: FALTA DE CAMAS")
                 else:
                     print("\t\tSITUACION ESTABLE")
-            #opcion 4:    
+                print("------------------------------------------------------------")
+            #opcion 4 de la pestaña del programa:    
             elif y== 4:
                 print("-----------------------------------------------------")
                 print("Programa cerrado")
@@ -131,13 +133,15 @@ while i==1:
                 mensaje_error()
                 z = 1
         i=0
-    #opcion 2
+    #opcion 2 del programa principal#
     elif x== 2:
         print("----------------------------------------------------------")
         print("Progama cerrado")
         i=0
+    #easter egg#
     elif x == 69:
         imagen()
+    #error cuando se pone valores no validos#
     else:
         mensaje_error()
         i=1

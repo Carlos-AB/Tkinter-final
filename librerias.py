@@ -1,6 +1,7 @@
 from tkinter import *
+#librerias tkinter#
 
-def imagen():
+def imagen(): #ventana imagen - easter egg#
     ventana=Tk()
     ventana.title("wey ya")
     ventana.resizable(False,False)
@@ -15,7 +16,7 @@ def imagen():
     label.pack()    
     ventana.mainloop()
 
-def mensaje_error():
+def mensaje_error(): #mensaje de error#
     ventana=Tk()
     ventana.title("Error")
     ventana.resizable(False,False)

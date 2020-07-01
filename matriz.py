@@ -1,5 +1,6 @@
+#librería numpy#
 import numpy as np
-def split(arr, size):
+def split(arr, size): #division de lista por semana#
     arrs = []
     while len(arr) > size:
         pice = arr[:size]
